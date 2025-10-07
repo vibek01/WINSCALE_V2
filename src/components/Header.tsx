@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react';
-import { Rocket, Menu, X } from 'lucide-react';
-import { colors } from '../theme/colors';
+// src/components/Header.tsx
 
+import { useState, useEffect } from 'react';
+// 1. The 'Rocket' icon is no longer needed, so it has been removed from the import.
+import { Menu, X } from 'lucide-react';
+import { colors } from '../theme/colors';
+import logo from '../public/logo.png'
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,7 +42,15 @@ export default function Header() {
               onClick={() => scrollToSection('top')}
               className="flex items-center gap-2 group"
             >
-              <Rocket className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
+              {/* --- CHANGE HERE --- */}
+              {/* 2. The Rocket component is replaced with an <img> tag. */}
+              {/* It points to your logo in the `public` folder. */}
+              {/* The styling classes are kept to maintain the size and hover effect. */}
+              <img 
+                src={logo} // If your image is named differently, change it here.
+                alt="WinScale Logo" 
+                className="w-18 h-10 group-hover:scale-110 transition-transform" 
+              />
               <span className="text-2xl font-bold text-white">WinScale</span>
             </button>
 
